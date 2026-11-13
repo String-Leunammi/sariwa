@@ -1,0 +1,61 @@
+body.page-about {
+  background: #ede3d0 url("../assets/images/about/paper.webp") center / cover fixed;
+}
+
+.about { max-width: 1000px; margin: 0 auto; padding: 28px 24px 56px; }
+
+/* title + intro */
+.intro { display: flex; align-items: center; gap: 28px; padding: 12px 0; }
+.intro h1 {
+  flex: none; margin: 0;
+  font-family: "Pacifico", cursive; font-weight: 400; line-height: 1;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: #b04a28; text-shadow: 4px 4px 0 #6b6b6b;
+}
+.intro p { flex: 1; margin: 0; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.5; text-align: justify; text-indent: 2em; }
+
+.about hr { border: 0; border-top: 2px solid var(--brown); margin: 20px 0 30px; }
+
+/* benefit pills */
+.pills { display: flex; justify-content: center; gap: 30px; }
+.pills p {
+  width: 28%; margin: 0; padding: 14px 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--lime-soft); color: #1b3409; border-radius: 12px;
+  text-align: center; font-size: .95rem; line-height: 1.35;
+}
+
+/* overlapping photos */
+.collage { position: relative; margin: 28px 0 14px; }
+.collage .food { display: block; width: 62%; height: auto; border-radius: 24px; box-shadow: 0 8px 18px rgba(0, 0, 0, .25); }
+.collage .family {
+  position: absolute; top: 10%; right: 0; width: 50%; height: auto;
+  border-radius: 14px; box-shadow: 0 8px 18px rgba(0, 0, 0, .3);
+}
+.caption { text-align: center; font-size: 1.05rem; margin: 18px 0 72px; }
+
+/* team */
+.team { display: flex; justify-content: center; align-items: flex-start; gap: 2%; list-style: none; margin: 0; padding: 0; }
+.member {
+  position: relative; width: 18%; aspect-ratio: .56;
+  background: var(--green); border-radius: 12px;
+  transition: transform .25s;
+}
+
+.member .name {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: clamp(.85rem, 1.6vw, 1.15rem);
+  text-align: center;
+}
+
+.member:hover { transform: translateY(-10px); }
+.member:nth-child(even) { background: var(--brown); margin-top: 6%; }
+.member img {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 113%; width: auto; max-width: none;     /* head pops out above the card */
+}

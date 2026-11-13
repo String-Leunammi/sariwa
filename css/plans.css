@@ -1,0 +1,190 @@
+body.page-plans {
+  background: #a4522b url("../assets/images/home/wood-pattern.png") center / cover no-repeat;   
+  color: #fff;
+}
+
+.plans-main { width: min(1100px, calc(100% - 24px)); margin: 0 auto; padding: 8px 0 48px; }
+
+.page-title {
+  margin: 12px 0 8px; text-align: center;
+  font-family: "Lobster", "Brush Script MT", cursive; font-weight: 400;
+  font-size: clamp(2.6rem, 8vw, 5.2rem); line-height: 1.1;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, .3);
+}
+.view-sub { text-align: center; margin: 0 0 20px; font-size: 1.05rem; text-shadow: 0 2px 2px rgba(0, 0, 0, .5); }
+
+/* ---------- VIEW 1 · choose a plan ---------- */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 3vw, 40px); padding-top: 12px; }
+
+.plan {
+  position: relative;
+  aspect-ratio: 474 / 670;
+  background: url("../assets/images/plans/package.png") no-repeat center / 100% 100%;
+  container-type: inline-size;          
+  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, .45));
+  color: #3a1f0d;
+  transition: transform .25s;
+}
+.plan:hover { transform: scale(1.04); }
+.plan-label { position: absolute; top: 5%; left: 20%; width: 60%; overflow: visible; }
+.plan-label text {
+  font-family: var(--font-display); font-size: 38px; letter-spacing: 1px; text-transform: uppercase;
+  fill: var(--green); stroke: #fff; stroke-width: 5px; paint-order: stroke;
+}
+.plan-price {
+  position: absolute; top: 27%; left: 0; right: 0; margin: 0; text-align: center;
+  font-family: var(--font-display); font-size: 19cqw; line-height: 1;
+  color: var(--green); -webkit-text-stroke: 1.2cqw #fff; paint-order: stroke fill;
+}
+.plan-body {
+  position: absolute; left: 14%; right: 14%; top: 44.5%; bottom: 6.5%;
+  display: flex; flex-direction: column;
+  font-family: var(--font-display); text-transform: uppercase;
+  font-size: 5.6cqw; line-height: 1.05; letter-spacing: .03em;
+}
+.features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2.4cqw; }
+.features > li { display: grid; grid-template-columns: 8cqw 1fr; column-gap: 3cqw; align-items: start; }
+.features > li::before {
+  content: "✓"; display: grid; place-items: center;
+  width: 7.5cqw; height: 7.5cqw; border: .8cqw solid var(--green); border-radius: 1.4cqw;
+  font-size: 5.5cqw; line-height: 1; color: var(--green);
+}
+.sub { grid-column: 2; margin: .6cqw 0 0; padding-left: 5cqw; list-style: disc; }
+
+.plan-footer { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 2.4cqw; }
+.servings {
+  -webkit-appearance: none; appearance: none; border: 0; cursor: pointer;
+  background: var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 3cqw center / 4cqw;
+  color: #fff; font: inherit; font-size: 4.6cqw; text-transform: uppercase;
+  width: 52cqw; padding: 1.2cqw 8cqw 1.2cqw 4cqw; border-radius: 99px;
+}
+.select-btn {
+  border: 0; cursor: pointer; background: var(--green-dark); color: #fff;
+  font: inherit; font-size: 8cqw; text-transform: uppercase; letter-spacing: .03em;
+  padding: .8cqw 12cqw; border-radius: 2.5cqw; transition: background-color .15s;
+}
+.select-btn:hover { background: #163808; }
+
+.shelf {
+  height: clamp(22px, 4vw, 44px); margin-top: -10px; border-radius: 4px;
+  background: url("../assets/images/home/wood-v.png") center / 100% 100% no-repeat;   /* same image and method as the landing page's wood strips */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, .25), 0 10px 18px rgba(0, 0, 0, .35);
+}
+/* ---------- shared bits for views 2–4 ---------- */
+.view-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0 18px; }
+.view-head .page-title { margin: 0; text-align: left; flex: 1 1 auto; font-size: clamp(2rem, 5.5vw, 3.6rem); }
+.link-btn {
+  background: rgba(0, 0, 0, .35); color: #fff; border: 2px solid rgba(255, 255, 255, .8);
+  border-radius: 999px; padding: 6px 16px; cursor: pointer;
+  font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 1px;
+}
+.link-btn:hover { background: rgba(0, 0, 0, .55); }
+
+/* ---------- VIEW 2 · build your plan ---------- */
+.main-layout { display: grid; grid-template-columns: 1fr minmax(300px, 420px); gap: 32px; align-items: start; }
+
+.food-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px 10px;
+}
+.food-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.food-img-wrapper { position: relative; width: min(120px, 100%); aspect-ratio: 1; }
+.food-img-wrapper img {
+  width: 100%; height: 100%; object-fit: contain;
+  border: 3px solid #fff; border-radius: 50%;     /* border on the plate, no white background */
+  transition: transform .2s;
+}
+.food-img-wrapper img:hover { transform: scale(1.08); }
+.food-qty {
+  position: absolute; top: -4px; right: -4px; min-width: 28px; height: 28px; padding: 0 6px;
+  display: grid; place-items: center; border-radius: 99px;
+  background: var(--green-dark); color: #fff; border: 2px solid #fff;
+  font-family: var(--font-display); font-size: 1.1rem;
+}
+.food-name {
+  margin: 0; min-height: 2.1em; display: flex; align-items: flex-start; justify-content: center; text-align: center; font-family: var(--font-display);
+  font-size: .95rem; line-height: 1.05; letter-spacing: .04em; text-shadow: 0 2px 2px rgba(0, 0, 0, .6);
+}
+.controls { display: flex; gap: 10px; }
+.controls button {
+  width: 34px; height: 34px; border: 0; border-radius: 50%; cursor: pointer;
+  font-size: 1.5rem; font-weight: 700; line-height: 1; display: grid; place-items: center;
+}
+.btn-minus { background: #9cd883; color: #1a3300; }
+.btn-plus  { background: #cbb28d; color: #2b1800; }
+.controls button:disabled { opacity: .4; cursor: not-allowed; }
+
+.side { position: sticky; top: 12px; display: flex; flex-direction: column; gap: 14px; }
+.meter { margin: 0; text-align: center; font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 1px; text-shadow: 0 2px 2px rgba(0, 0, 0, .6); }
+
+.receipt {
+  font-family: Consolas, "Courier New", monospace; font-size: .9rem;
+  padding: 22px 22px 18px; background: #fff; color: #1a1a1a;
+  border: 1px solid #dcdcdc; box-shadow: 0 10px 20px rgba(0, 0, 0, .35);
+}
+.receipt-header, .receipt-footer { text-align: center; font-weight: bold; margin: 0 0 8px; line-height: 1.5; }
+.receipt-rule { margin: 6px 0; border: 0; border-top: 2px dashed #555; }
+.receipt-meta { display: flex; justify-content: space-between; font-weight: bold; margin: 2px 0; }
+.receipt-row, .receipt-cols { display: grid; grid-template-columns: 34px 1fr 34px; gap: 8px; font-weight: bold; }
+.receipt-row > :last-child, .receipt-cols > :last-child { text-align: right; }
+.receipt-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; min-height: 2.5em; }
+.receipt-empty { text-align: center; color: #777; font-weight: normal; padding: 6px 0; }
+.receipt-total { display: flex; justify-content: space-between; font-weight: bold; }
+
+.big-btn {
+  align-self: center; width: 220px; padding: 8px 10px; cursor: pointer;
+  font-family: var(--font-display); font-size: 1.75rem; letter-spacing: 1.5px;
+  border-radius: 10px; border: 1px solid #27471d; background: #27471d; color: #fff;
+  transition: background-color .2s;
+}
+.big-btn:hover:not(:disabled) { background: #325a25; }
+.big-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ---------- VIEW 3 · checkout ---------- */
+.checkout-layout { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr); gap: 32px; align-items: start; }
+.checkout-form-box {
+  background: #fff; color: #1a1a1a; border: 3px solid #7bc043; border-radius: 12px;
+  padding: 28px 24px; box-shadow: 0 10px 20px rgba(0, 0, 0, .35);
+}
+#order-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.form-label { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 1px; color: #27471d; padding: 0; }
+.form-input {
+  width: 100%; height: 44px; padding: 8px 14px; font: inherit; font-size: 1rem;
+  border: 2px solid #367e16; border-radius: 6px; background: #fafafa; color: #000;
+}
+.form-input:focus { outline: 3px solid var(--lime); outline-offset: 1px; background: #fff; }
+.form-input:user-invalid { border-color: #b3261e; }
+.form-hint { margin: 0; font-size: .8rem; color: #555; }
+
+.payment-options { display: flex; gap: 12px; }
+.payment-option { flex: 1; position: relative; }
+.payment-option input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.payment-option span {
+  display: block; padding: 11px 8px; text-align: center; cursor: pointer;
+  font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 1px;
+  background: #fff; color: #27471d; border: 2px solid #367e16; border-radius: 6px; transition: background-color .15s;
+}
+.payment-option input:checked + span { background: #367e16; color: #fff; }
+.payment-option input:focus-visible + span { outline: 3px solid var(--lime); outline-offset: 2px; }
+
+/* ---------- VIEW 4 · done ---------- */
+.done-card {
+  max-width: 560px; margin: 24px auto; padding: 32px 28px; text-align: center;
+  background: #fff; color: #1a1a1a; border: 3px solid #7bc043; border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .35);
+}
+.done-card h2 { margin: 0 0 8px; font-family: "Lobster", cursive; font-weight: 400; font-size: 2.4rem; color: var(--green); }
+.done-card p { margin: 6px 0; line-height: 1.5; }
+.order-ref { display: inline-block; margin: 10px 0 18px; padding: 6px 16px; background: var(--sand); border-radius: 8px; font-family: Consolas, monospace; font-weight: bold; letter-spacing: 1px; }
+.done-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+.done-actions a, .done-actions button { text-decoration: none; display: inline-block; }
+
+/* headings receive programmatic focus on view change; no ring needed */
+[tabindex="-1"]:focus { outline: none; }
+
+@keyframes plan-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+.plan { animation: plan-float 3.4s ease-in-out infinite; }
+.plan:nth-child(2) { animation-delay: -1.1s; }
+.plan:nth-child(3) { animation-delay: -2.2s; }
+.plan:hover { animation-play-state: paused; }

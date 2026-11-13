@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sariwa | Plans</title>
+  <meta name="description" content="Choose a 3-day, weekly or bi-weekly Sariwa meal-kit plan, pick your meals and check out.">
+  <meta name="theme-color" content="#2f7a14">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232f7a14'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Impact,sans-serif'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/plans.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-plans">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-logo" href="index.html"><img src="assets/images/brand/logo-white.png" alt="Sariwa – home" width="150" height="42"></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="plans.html" aria-current="page">Plans</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="plans-main">
+
+    <!-- VIEW 1 · choose -->
+    <section id="view-choose" aria-labelledby="choose-title">
+      <h1 class="page-title" id="choose-title">Choose Your Plan</h1>
+      <div class="plans">
+        <article class="plan" aria-label="3 Days plan">
+          <svg class="plan-label" viewBox="0 0 200 60" aria-hidden="true"><path id="arc1" d="M15 52 Q100 -8 185 52" fill="none"/><text><textPath href="#arc1" startOffset="50%" text-anchor="middle">3 Days</textPath></text></svg>
+          <p class="plan-price">₱850</p>
+          <div class="plan-body">
+            <ul class="features">
+            <li>Includes full-day meal plan for 3 days<ul class="sub"><li>Breakfast</li><li>Lunch</li><li>Dinner</li></ul></li>
+            <li>Free shipping fee nationwide</li>
+            </ul>
+            <div class="plan-footer">
+              <label class="sr-only" for="srv-3-day">Servings for the 3 Days plan</label>
+              <select class="servings" id="srv-3-day"><option value="1">1 serving</option><option value="2">2 servings</option><option value="3">3 servings</option><option value="4">4 servings</option></select>
+              <button type="button" class="select-btn" data-plan="3-day">Select</button>
+            </div>
+          </div>
+        </article>
+        <article class="plan" aria-label="A Week plan">
+          <svg class="plan-label" viewBox="0 0 200 60" aria-hidden="true"><path id="arc2" d="M15 52 Q100 -8 185 52" fill="none"/><text><textPath href="#arc2" startOffset="50%" text-anchor="middle">A Week</textPath></text></svg>
+          <p class="plan-price">₱1600</p>
+          <div class="plan-body">
+            <ul class="features">
+            <li>Includes full-day meal plan for 7 days</li>
+            <li>Includes free lunch dessert everyday</li>
+            <li>Free shipping fee nationwide</li>
+            </ul>
+            <div class="plan-footer">
+              <label class="sr-only" for="srv-week">Servings for the A Week plan</label>
+              <select class="servings" id="srv-week"><option value="1">1 serving</option><option value="2">2 servings</option><option value="3">3 servings</option><option value="4">4 servings</option></select>
+              <button type="button" class="select-btn" data-plan="week">Select</button>
+            </div>
+          </div>
+        </article>
+        <article class="plan" aria-label="Bi-Week plan">
+          <svg class="plan-label" viewBox="0 0 200 60" aria-hidden="true"><path id="arc3" d="M15 52 Q100 -8 185 52" fill="none"/><text><textPath href="#arc3" startOffset="50%" text-anchor="middle">Bi-Week</textPath></text></svg>
+          <p class="plan-price">₱2300</p>
+          <div class="plan-body">
+            <ul class="features">
+            <li>Includes full-day meal plan for 14 days</li>
+            <li>Includes free lunch dessert everyday</li>
+            <li>Flexible delivery schedule options</li>
+            <li>Free shipping fee nationwide</li>
+            </ul>
+            <div class="plan-footer">
+              <label class="sr-only" for="srv-biweek">Servings for the Bi-Week plan</label>
+              <select class="servings" id="srv-biweek"><option value="1">1 serving</option><option value="2">2 servings</option><option value="3">3 servings</option><option value="4">4 servings</option></select>
+              <button type="button" class="select-btn" data-plan="biweek">Select</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="shelf" aria-hidden="true"></div>
+    </section>
+
+    <!-- VIEW 2 · build -->
+    <section id="view-build" hidden aria-labelledby="builder-title">
+      <div class="view-head">
+        <h1 class="page-title" id="builder-title">Meal-Kit Plan</h1>
+        <button type="button" class="link-btn" id="back-to-plans">← Change plan</button>
+      </div>
+      <div class="main-layout">
+        <ul class="food-grid" id="food-grid" aria-label="Meals"></ul>
+        <div class="side">
+          <p class="meter" id="meter" role="status" aria-live="polite"></p>
+          <p class="meter" id="meter-hint" style="font-size:1rem"></p>
+          <div class="receipt">
+            <p class="receipt-header">=======================<br>S A R I W A<br>Freshness At Its Finest<br>contact.sariwa@gmail.com<br>=======================</p>
+            <div class="receipt-meta"><span>PLAN</span><span data-receipt-plan>-</span></div>
+            <div class="receipt-meta"><span>SERVINGS</span><span data-receipt-pax>-</span></div>
+            <hr class="receipt-rule">
+            <div class="receipt-cols" aria-hidden="true"><span>PAX</span><span>FOOD</span><span>QTY</span></div>
+            <hr class="receipt-rule">
+            <ul class="receipt-list"></ul>
+            <hr class="receipt-rule">
+            <div class="receipt-total"><span>TOTAL ITEMS</span><span data-receipt-total>0</span></div>
+            <p class="receipt-footer" style="margin-top:10px">=======================<br>THANK YOU FOR YOUR ORDER!</p>
+          </div>
+          <button type="button" class="big-btn" id="to-checkout-btn">CHECK OUT</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3 · checkout -->
+    <section id="view-checkout" hidden aria-labelledby="checkout-title">
+      <div class="view-head">
+        <h1 class="page-title" id="checkout-title">Checkout</h1>
+        <button type="button" class="link-btn" id="back-to-build">← Back to meals</button>
+      </div>
+      <div class="checkout-layout">
+        <div class="receipt">
+            <p class="receipt-header">=======================<br>S A R I W A<br>Freshness At Its Finest<br>contact.sariwa@gmail.com<br>=======================</p>
+            <div class="receipt-meta"><span>PLAN</span><span data-receipt-plan>-</span></div>
+            <div class="receipt-meta"><span>SERVINGS</span><span data-receipt-pax>-</span></div>
+            <hr class="receipt-rule">
+            <div class="receipt-cols" aria-hidden="true"><span>PAX</span><span>FOOD</span><span>QTY</span></div>
+            <hr class="receipt-rule">
+            <ul class="receipt-list"></ul>
+            <hr class="receipt-rule">
+            <div class="receipt-total"><span>TOTAL ITEMS</span><span data-receipt-total>0</span></div>
+            <p class="receipt-footer" style="margin-top:10px">=======================<br>THANK YOU FOR YOUR ORDER!</p>
+          </div>
+        <div class="checkout-form-box">
+          <form id="order-form" autocomplete="on">
+            <div class="form-group">
+              <label class="form-label" for="fullname">FULL NAME</label>
+              <input class="form-input" id="fullname" name="fullname" type="text" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact">CONTACT NUMBER</label>
+              <input class="form-input" id="contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+()\s\-]{7,16}" title="Use digits only, e.g. 0917 123 4567" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address">DELIVERY ADDRESS</label>
+              <input class="form-input" id="address" name="address" type="text" autocomplete="street-address" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="zip">ZIP CODE</label>
+              <input class="form-input" id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{4}" maxlength="4" title="4-digit Philippine ZIP code" required>
+            </div>
+            <fieldset class="form-group">
+              <legend class="form-label">PAYMENT CHOICE</legend>
+              <div class="payment-options">
+                <label class="payment-option"><input type="radio" name="payment" value="COD" checked><span>CASH ON DELIVERY</span></label>
+                <label class="payment-option"><input type="radio" name="payment" value="Card"><span>DEBIT/CREDIT CARD</span></label>
+              </div>
+            </fieldset>
+            <button type="submit" class="big-btn">PLACE ORDER</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4 · done -->
+    <section id="view-done" hidden aria-labelledby="done-title">
+      <div class="done-card">
+        <h2 id="done-title">Thank you, <span id="done-name"></span>!</h2>
+        <p>Your order has been placed. Pay by <strong id="done-pay"></strong> on delivery.</p>
+        <p class="order-ref" id="done-ref"></p>
+        <p style="font-size:.85rem;color:#666">Demo checkout: this order is shown on screen only and isn't sent anywhere yet.</p>
+        <div class="done-actions">
+          <a class="link-btn" style="background:#27471d" href="menu.html">Browse the menu</a>
+          <button type="button" class="link-btn" style="background:#27471d" id="new-order">Start a new order</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <img class="footer-logo" src="assets/images/brand/logo-green.png" alt="Sariwa" width="190" height="54">
+      <p class="footer-tagline">FRESHNESS AT ITS FINEST</p>
+      <a class="footer-about" href="about-us.html">ABOUT US</a>
+    </div>
+    <hr class="footer-rule">
+    <div class="footer-row">
+      <p class="footer-subtext">Always fresh, always first</p>
+      <div class="footer-links">
+        <a href="plans.html">www.sariwasubscription.com</a>
+        <a href="mailto:contact.sariwa@gmail.com">contact.sariwa@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/meals.js"></script>
+  <script src="js/plans.js"></script>
+</body>
+</html>
